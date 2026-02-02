@@ -10,7 +10,10 @@ const postRoutes = require('./routes/postRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.VITE_FRONTEND_URL || 'http://localhost:5173',
+  credentials: true
+}));
 app.use(express.json());
 // Create uploads directory if it doesn't exist
 const fs = require('fs');
@@ -21,6 +24,9 @@ if (!fs.existsSync(uploadsDir)){
 app.use('/uploads', express.static(uploadsDir));
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('3WBussiness API is running...');
+});
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
 
