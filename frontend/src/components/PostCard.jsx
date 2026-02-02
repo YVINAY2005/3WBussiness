@@ -48,7 +48,8 @@ const PostCard = ({ post, currentUser }) => {
   const getImageUrl = (imagePath) => {
     if (!imagePath) return '';
     if (imagePath.startsWith('http')) return imagePath;
-    return `http://localhost:5000${imagePath}`;
+    const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+    return `${baseUrl}${imagePath}`;
   };
 
   return (
