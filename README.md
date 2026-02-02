@@ -92,3 +92,15 @@ A modern, mobile-first social feed application built with React, Node.js, and Mo
 
 ## 🛡️ License
 This project is open-source and available for educational purposes.
+
+## 🚀 Deployment (Render)
+
+### Backend Deployment
+1. **Root Directory**: `backend`
+2. **Build Command**: `npm install`
+3. **Start Command**: `npm start`
+4. **Environment Variables**:
+   - `MONGODB_URI`: Your MongoDB connection string.
+   - `JWT_SECRET`: A secure secret key.
+   - `PORT`: 10000 (Render's default).
+   - `VITE_FRONTEND_URL`: The URL of your deployed frontend.
